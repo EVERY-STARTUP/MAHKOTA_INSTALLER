@@ -1,0 +1,665 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v1.0.0",
+        "title": "Swagger Demo Project",
+        "description": "Implementation of Swagger with TypeScript"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000",
+            "description": "Local server"
+        }
+    ],
+    "paths": {
+        "/api/v1": {
+            "get": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/users/": {
+            "get": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            },
+            "patch": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            },
+            "delete": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/users/detail/{userId}": {
+            "get": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "authorization",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/users/login": {
+            "post": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/users/register": {
+            "post": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/files/": {
+            "post": {
+                "description": "",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/products/": {
+            "get": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            },
+            "put": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/products/{productId}": {
+            "get": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/products/{saleId}": {
+            "delete": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "saleId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/sales/": {
+            "get": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            },
+            "put": {
+                "description": "",
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v1/sales/{saleId}": {
+            "get": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "saleId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            },
+            "delete": {
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "saleId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer"
+            }
+        },
+        "schemas": {
+            "UserLogin": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "example": "object"
+                    },
+                    "properties": {
+                        "type": "object",
+                        "properties": {
+                            "userName": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "johndoe"
+                                    }
+                                }
+                            },
+                            "userPassword": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "password123"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": {
+                        "type": "array",
+                        "example": [
+                            "userName",
+                            "userPassword"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "UserRegistration": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "example": "object"
+                    },
+                    "properties": {
+                        "type": "object",
+                        "properties": {
+                            "userName": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "johndoe"
+                                    }
+                                }
+                            },
+                            "userEmail": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "johndoe@example.com"
+                                    }
+                                }
+                            },
+                            "userRole": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "enum": {
+                                        "type": "array",
+                                        "example": [
+                                            "admin",
+                                            "user"
+                                        ],
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "user"
+                                    }
+                                }
+                            },
+                            "userPassword": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "password123"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": {
+                        "type": "array",
+                        "example": [
+                            "userName",
+                            "userEmail",
+                            "userRole",
+                            "userPassword"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "FindAllUsers": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "example": "object"
+                    },
+                    "properties": {
+                        "type": "object",
+                        "properties": {
+                            "page": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "integer"
+                                    },
+                                    "example": {
+                                        "type": "number",
+                                        "example": 0
+                                    }
+                                }
+                            },
+                            "size": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "integer"
+                                    },
+                                    "example": {
+                                        "type": "number",
+                                        "example": 10
+                                    }
+                                }
+                            },
+                            "search": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": ""
+                                    }
+                                }
+                            },
+                            "pagination": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "boolean"
+                                    },
+                                    "example": {
+                                        "type": "boolean",
+                                        "example": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "FindOneUser": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "example": "object"
+                    },
+                    "properties": {
+                        "type": "object",
+                        "properties": {
+                            "userId": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "123456789"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": {
+                        "type": "array",
+                        "example": [
+                            "userId"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "example": "object"
+                    },
+                    "properties": {
+                        "type": "object",
+                        "properties": {
+                            "userId": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "123456789"
+                                    }
+                                }
+                            },
+                            "userName": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "johndoe"
+                                    }
+                                }
+                            },
+                            "userPassword": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "password123"
+                                    }
+                                }
+                            },
+                            "userRole": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "enum": {
+                                        "type": "array",
+                                        "example": [
+                                            "admin",
+                                            "user"
+                                        ],
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "user"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": {
+                        "type": "array",
+                        "example": [
+                            "userId",
+                            "userName",
+                            "userPassword",
+                            "userRole"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "UpdateUser": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "example": "object"
+                    },
+                    "properties": {
+                        "type": "object",
+                        "properties": {
+                            "userId": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "123456789"
+                                    }
+                                }
+                            },
+                            "userName": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "johndoe"
+                                    }
+                                }
+                            },
+                            "userPassword": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "password123"
+                                    }
+                                }
+                            },
+                            "userRole": {
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "example": "string"
+                                    },
+                                    "enum": {
+                                        "type": "array",
+                                        "example": [
+                                            "admin",
+                                            "user"
+                                        ],
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "example": {
+                                        "type": "string",
+                                        "example": "user"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": {
+                        "type": "array",
+                        "example": [
+                            "userId",
+                            "userName",
+                            "userPassword",
+                            "userRole"
+                        ],
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

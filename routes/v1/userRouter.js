@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = require("../../controllers/auth");
+const middlewares_1 = require("../../middlewares");
+const myProfile_1 = require("../../controllers/myProfile");
+const router = (0, express_1.Router)();
+router.get('/', middlewares_1.middleware.useAuthorization, async (req, res) => auth_1.UsersController.findAll(req, res));
+router.get('/detail/:userId', middlewares_1.middleware.useAuthorization, async (req, res) => auth_1.UsersController.findOne(req, res));
+router.patch('/', async (req, res) => auth_1.UsersController.update(req, res));
+router.delete('/', async (req, res) => auth_1.UsersController.remove(req, res));
+router.post('/login', async (req, res) => auth_1.UsersController.login(req, res));
+router.post('/register', async (req, res) => auth_1.UsersController.register(req, res));
+router.get('/my-profile', middlewares_1.middleware.useAuthorization, async (req, res) => await myProfile_1.myProfileController.find(req, res));
+router.patch('/my-profile', middlewares_1.middleware.useAuthorization, async (req, res) => await myProfile_1.myProfileController.update(req, res));
+exports.default = router;
